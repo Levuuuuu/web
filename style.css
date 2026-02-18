@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #1a1a1a;
+    padding: 40px 10%; /* Marges latérales pour centrer le contenu */
+    background-color: #f5e9e9;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 0.85rem;
+}
+
+/* Grille de photos */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s;
+}
+
+.card h3 {
+    text-align: center;
+    font-weight: 400;
+    font-size: 0.95rem;
+    margin-top: 15px;
+}
+
+/* Section Infos & Ligne de séparation */
+hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Système de colonnes pour les Tarifs */
+.pricing-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.price-col {
+    flex: 1;
+}
+
+.price-col h3 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.price-col p {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+/* Footer */
+footer {
+    margin-top: 80px;
+    padding: 40px 0;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .gallery { grid-template-columns: repeat(2, 1fr); }
+    .pricing-container { flex-direction: column; gap: 30px; }
+}
+
+@media (max-width: 600px) {
+    .gallery { grid-template-columns: 1fr; }
+    header { flex-direction: column; gap: 20px; }
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: #1a1a1a; /* Couleur noire comme ton template */
+    font-size: 1.2rem; /* Taille de l'icône */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #888; /* Gris clair au survol */
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes comme ton modèle */
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.card img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Force un carré parfait */
+    object-fit: cover;   /* Remplit le carré sans déformer l'image */
+    background-color: #f9f9f9; /* Petit fond gris en attendant que l'image charge */
+    display: block;
+}
+
+.card h3 {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* Conteneur pour le logo + le texte */
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espace entre le logo et le texte */
+}
+
+.header-logo {
+    width: 100px;         /* Taille plus grosse (ajuste si besoin) */
+    height: 100px;        /* Doit être identique à la largeur pour un cercle parfait */
+    border-radius: 50%;   /* C'est ce qui rend l'image ronde */
+    object-fit: cover;    /* Pour que l'image ne soit pas déformée dans le cercle */
+    border: 2px solid #eee; /* Optionnel : un petit bord fin pour faire propre */
+}
+
+.logo-text {
+    font-size: 1.8rem;    /* Texte un peu plus gros pour aller avec le logo */
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Ajustement du Header pour laisser de la place */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+    flex-wrap: wrap; /* Permet au menu de passer dessous sur petit écran */
+}
