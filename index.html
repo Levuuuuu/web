@@ -7,15 +7,14 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
     <header>
         <div class="brand-container">
-        <img src="logoluna.png" alt="Luna Studio Floral" class="header-logo">
-        <h1 class="logo-text">Luna Studio Floral</h1>
-</div>
+            <img src="logoluna.png" alt="Luna Studio Floral" class="header-logo">
+            <h1 class="logo-text">Luna Studio Floral</h1>
+        </div>
         <nav>
             <ul class="nav-links">
                 <li><a href="#boutique">Boutique</a></li>
@@ -34,23 +33,22 @@
     </header>
 
     <main id="boutique" class="gallery">
-    <div class="card">
-        <img src="IMG_5018.png" alt="Rose">
-        <h3></h3>
-    </div>
-    <div class="card">
-        <img src="IMG_5019.png" alt="Bouquet">
-        <h3></h3>
-    </div>
-    <div class="card">
-        <img src="IMG_5020.png" alt="Sakura">
-        <h3></h3>
-    </div>
-    <div class="card">
-        <img src="IMG_5022.png" alt="Sakura">
-        <h3></h3>
-    </div>
-
+        <div class="card">
+            <img src="IMG_5018.png" alt="Rose">
+            <h3></h3>
+        </div>
+        <div class="card">
+            <img src="IMG_5019.png" alt="Bouquet">
+            <h3></h3>
+        </div>
+        <div class="card">
+            <img src="IMG_5020.png" alt="Sakura">
+            <h3></h3>
+        </div>
+        <div class="card">
+            <img src="IMG_5022.png" alt="Sakura">
+            <h3></h3>
+        </div>
     </main>
 
     <section class="info-section">
@@ -83,17 +81,31 @@
         <div id="a-propos" style="margin-top: 60px;">
             <h3>À Propos</h3>
             <p>Spécialisés dans la création de fleurs artificielles d’exception, nous transformons le satin de haute qualité en pièces florales uniques, entièrement réalisées à la main.
-
-Chaque pétale est découpé, façonné et assemblé avec une précision d'orfèvre pour capturer l'éclat et la douceur d'une fleur naturelle. Bien plus qu’une simple décoration, nos fleurs sont des objets d’art conçus pour durer et sublimer vos moments de vie — mariages, cadeaux ou décoration d'intérieur — sans jamais perdre de leur superbe.</p>
+            Chaque pétale est découpé, façonné et assemblé avec une précision d'orfèvre pour capturer l'éclat et la douceur d'une fleur naturelle.</p>
         </div>
     </section>
 
     <footer id="contact">
-        <!--<p>Contact : <a href="mailto:"></a></p>-->
         <p>© 2026 Luna Studio Floral</p>
     </footer>
 
-</body>
+    <div id="zoom-overlay" onclick="this.style.display='none'">
+        <img id="zoom-img" src="" alt="Zoom">
+    </div>
 
+    <script>
+        const images = document.querySelectorAll('.card img');
+        const overlay = document.getElementById('zoom-overlay');
+        const zoomImg = document.getElementById('zoom-img');
+
+        images.forEach(img => {
+            img.onclick = () => {
+                overlay.style.display = 'flex';
+                zoomImg.src = img.src;
+            };
+        });
+    </script>
+
+</body>
 </html>
 
