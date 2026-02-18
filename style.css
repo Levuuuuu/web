@@ -245,38 +245,45 @@ header {
     color: white;
 }
 
+/* Le conteneur qui cache ce qui dépasse */
 .announcement-bar {
-    background-color: #fce4ec;
+    background-color: #fce4ec; /* Rose pastel */
     color: #d81b60;
     width: 100%;
-    overflow: hidden; /* Cache ce qui dépasse du bord de l'écran */
-    white-space: nowrap; /* Empêche le texte de revenir à la ligne */
+    overflow: hidden; 
     padding: 10px 0;
+    white-space: nowrap;
     position: relative;
-    display: flex;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .scrolling-text {
     display: inline-block;
     white-space: nowrap;
-    animation: scroll-left 25s linear infinite; /* 25s = vitesse du défilement */
+    will-change: transform; /* Aide le navigateur à rendre l'animation fluide */
+    animation: defilement-infini 20s linear infinite;
 }
 
 .scrolling-text span {
     display: inline-block;
-    padding-right: 60px; /* Espace entre les messages */
+    padding-right: 50px; /* Espace entre les phrases */
     font-size: 0.9rem;
     font-weight: 500;
 }
 
-@keyframes scroll-left {
+@keyframes defilement-infini {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%); /* Déplace le texte vers la gauche */
+        transform: translateX(-33.33%); /* On se déplace de la taille d'un bloc de texte */
     }
 }
+
+.announcement-bar:active .scrolling-text {
+    animation-play-state: running;
+}
+
 
 
 
