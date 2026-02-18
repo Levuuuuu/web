@@ -182,3 +182,23 @@ header {
     flex-wrap: wrap; /* Permet au menu de passer dessous sur petit écran */
 
 }
+
+#zoom-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999; /* Très élevé pour être au-dessus du header */
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+}
+
+#zoom-img {
+    max-width: 90%;
+    max-height: 85%;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
