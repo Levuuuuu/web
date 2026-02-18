@@ -202,3 +202,46 @@ header {
     object-fit: contain;
 }
 
+/* Style du bouton "Bulle" */
+.accordion-btn {
+    background-color: white;
+    color: #1a1a1a;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    width: fit-content; /* S'adapte à la taille du texte */
+    border-radius: 50px; /* Effet bulle/pilule */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.accordion-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* Cacher le contenu par défaut */
+.accordion-content {
+    display: none; /* Cache le texte */
+    padding-left: 15px;
+    margin-bottom: 20px;
+    animation: fadeIn 0.4s ease;
+}
+
+/* Petit effet d'apparition douce */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Style quand la bulle est active */
+.accordion-btn.active {
+    background-color: #1a1a1a;
+    color: white;
+}
+
